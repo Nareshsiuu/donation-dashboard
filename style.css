@@ -27,7 +27,7 @@ body {
   min-height: 100vh;
 }
 
-/* Top Bar */
+
 
 .top-bar {
   position: sticky;
@@ -85,7 +85,7 @@ body {
   color: #e5e7eb;
 }
 
-/* Layout */
+
 
 .container {
   max-width: 1120px;
@@ -96,7 +96,7 @@ body {
   gap: 20px;
 }
 
-/* Cards */
+
 
 .summary-cards {
   display: grid;
@@ -140,7 +140,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Panels */
+
 
 .panel {
   background: var(--bg-panel);
@@ -168,7 +168,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Controls */
+
 
 .controls {
   display: flex;
@@ -209,7 +209,7 @@ body {
   filter: brightness(1.05);
 }
 
-/* Table */
+
 
 .table-wrapper {
   overflow-x: auto;
@@ -245,7 +245,7 @@ tbody tr:hover {
   background: rgba(15, 23, 42, 0.9);
 }
 
-/* Footer */
+
 
 .footer {
   text-align: center;
@@ -254,7 +254,7 @@ tbody tr:hover {
   padding: 18px 8px 26px;
 }
 
-/* Responsive */
+
 
 @media (max-width: 640px) {
   .top-bar {
@@ -286,3 +286,4 @@ tbody tr:hover {
     text-align: center;
   }
 }
+
