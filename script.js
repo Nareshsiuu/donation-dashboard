@@ -1,4 +1,4 @@
-// Dummy donation data
+
 const donations = [
   { id: 1, name: "Rahul Sharma", amount: 800, date: "2025-11-28", campaign: "General Fund" },
   { id: 2, name: "Aisha Khan", amount: 1500, date: "2025-11-29", campaign: "Cancer Care Kits" },
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCsvDownload();
 });
 
-// ---------- Summary Cards ----------
+
 
 function populateSummary() {
   const totalAmount = donations.reduce((sum, d) => sum + d.amount, 0);
@@ -39,7 +39,7 @@ function populateSummary() {
     : "–";
 }
 
-// ---------- Table Rendering ----------
+
 
 function renderTable(data) {
   const tbody = document.getElementById("donationTableBody");
@@ -72,10 +72,10 @@ function renderTable(data) {
   });
 }
 
-// ---------- Chart Rendering ----------
+
 
 function renderChart(data) {
-  // aggregate by date
+  
   const totalsByDate = data.reduce((acc, d) => {
     acc[d.date] = (acc[d.date] || 0) + d.amount;
     return acc;
@@ -121,11 +121,11 @@ function renderChart(data) {
     }
   });
 
-  // give canvas a fixed height via JS so it's visible
+  
   document.getElementById("donationChart").parentElement.style.height = "260px";
 }
 
-// ---------- Search / Filter ----------
+
 
 function setupSearch() {
   const input = document.getElementById("searchInput");
@@ -150,7 +150,7 @@ function setupSearch() {
   });
 }
 
-// ---------- CSV Download ----------
+
 
 function setupCsvDownload() {
   const btn = document.getElementById("downloadCsvBtn");
@@ -174,3 +174,4 @@ function setupCsvDownload() {
     URL.revokeObjectURL(url);
   });
 }
+
