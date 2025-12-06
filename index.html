@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donation Tracker Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font (Optional but makes it look modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo-area">
+      <div class="logo-circle">₹</div>
+      <div>
+        <h1>Donation Tracker</h1>
+        <p>Monitor donations, donors & trends at a glance.</p>
+      </div>
+    </div>
+    <div class="tag">Dashboard</div>
+  </header>
+
+  <main class="container">
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card">
+        <p class="card-label">Total Donations</p>
+        <p class="card-value" id="totalAmount">₹0</p>
+        <p class="card-sub">Across all campaigns</p>
+      </div>
+      <div class="card">
+        <p class="card-label">Total Donors</p>
+        <p class="card-value" id="totalDonors">0</p>
+        <p class="card-sub">Unique contributors</p>
+      </div>
+      <div class="card">
+        <p class="card-label">Average Donation</p>
+        <p class="card-value" id="avgDonation">₹0</p>
+        <p class="card-sub">Per donor</p>
+      </div>
+      <div class="card">
+        <p class="card-label">Latest Donation</p>
+        <p class="card-value" id="latestDonation">–</p>
+        <p class="card-sub">Most recent entry</p>
+      </div>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Donation Trends</h2>
+        <p class="panel-subtitle">Daily donation totals (dummy data)</p>
+      </div>
+      <canvas id="donationChart"></canvas>
+    </section>
+
+    <!-- Table & Filters -->
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Donations List</h2>
+          <p class="panel-subtitle">Search and explore individual donations</p>
+        </div>
+        <div class="controls">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by donor name or date (YYYY-MM-DD)..."
+          />
+          <button id="downloadCsvBtn">Download CSV</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Donor</th>
+              <th>Amount (₹)</th>
+              <th>Date</th>
+              <th>Campaign</th>
+            </tr>
+          </thead>
+          <tbody id="donationTableBody">
+            <!-- Filled by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built as an assignment for a donation tracking dashboard • Naresh Konar</p>
+  </footer>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- App Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
